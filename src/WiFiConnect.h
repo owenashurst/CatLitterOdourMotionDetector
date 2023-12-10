@@ -4,5 +4,6 @@
 #include <Arduino.h>
 
 bool connectToWiFi();
+void CheckAndReconnectedToWiFiIfDisconnected();
 
 #endif // WIFICONNECT_H

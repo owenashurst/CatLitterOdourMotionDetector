@@ -80,18 +80,27 @@ void ConnectToMqttBroker() {
             CreateOdourLevelSensorConfig();
             CreateMotionSensorConfig();
         } else {
-            Serial.println("Connection to MQTT broker failed. Retrying in 5 seconds...");
+            Serial.print("Connection to MQTT broker failed. Retrying in 5 seconds...");
             delay(5000);
         }
+    }
+
+    if (!mqtt.connected()) {
+        Serial.println("Failed to connect to MQTT broker after multiple attempts.");
+        // Implement any necessary recovery logic or error handling here
     }
 }
 
 void PublishMessageToMqttBroker(String message, const char* mqttTopic) {
     mqtt.publish(mqttTopic, message.c_str(), 0, true);
 
-    Serial.println("Message published to MQTT broker. Message: "+ message);
+    Serial.println("Message published to MQTT broker. Message: " + message);
 }
 
-void LoopMqttClient() {
+void LoopMqttClientAndReconnectIfDisconnected() {
+    if (!mqtt.connected()) {
+        Serial.println("MQTT client disconnected. Reconnecting...");
+        ConnectToMqttBroker();
+    }
     mqtt.loop();
 }

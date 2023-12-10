@@ -5,7 +5,7 @@
 
 void ConnectToMqttBroker();
 void PublishMessageToMqttBroker(String message, const char* mqttTopic);
-void LoopMqttClient();
+void LoopMqttClientAndReconnectIfDisconnected();
 
 #define STATE_TOPIC "homeassistant/sensor/catlitterodourmotiondetector/state"
 #define ODOUR_LEVEL_STRING_TOPIC "homeassistant/sensor/catlitterodourmotiondetector_odour_level_string/config"

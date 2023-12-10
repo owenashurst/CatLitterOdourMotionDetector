@@ -172,7 +172,8 @@ void setup() {
 }
 
 void loop() {
-  LoopMqttClient();
+  CheckAndReconnectedToWiFiIfDisconnected();
+  LoopMqttClientAndReconnectIfDisconnected();
 
   unsigned long currentTime = millis();
   bool isMotion = digitalRead(motionSensorPin) == HIGH;
