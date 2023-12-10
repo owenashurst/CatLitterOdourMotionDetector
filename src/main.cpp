@@ -151,7 +151,7 @@ void setup() {
   Serial.println("Starting ESP8266...");
   Serial.println("Connecting to WiFi...");
 
-  if (connectToWiFi()) {
+  if (ConnectToWiFi()) {
     Serial.println("Connected to the WiFi network");
     Serial.println("IP Address: " + WiFi.localIP().toString());
 

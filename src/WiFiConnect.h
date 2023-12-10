@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-bool connectToWiFi();
+bool ConnectToWiFi();
 void CheckAndReconnectedToWiFiIfDisconnected();
 
 #endif // WIFICONNECT_H

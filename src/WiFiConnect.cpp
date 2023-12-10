@@ -4,12 +4,13 @@
 const char* WifiName = "";
 const char* WifiPassword = "";
 
-bool connectToWiFi() {
+bool ConnectToWiFi() {
     WiFi.setHostname("CatLitterDetector");
     WiFi.begin(WifiName, WifiPassword);
 
     while (WiFi.status() != WL_CONNECTED) {
-        delay(1000);
+        Serial.println("WiFi not connected. Waiting 5 seconds...");
+        delay(5000);
     }
 
     Serial.println("Connected to Wi-Fi.");
