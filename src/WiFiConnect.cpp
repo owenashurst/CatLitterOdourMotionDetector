@@ -27,7 +27,7 @@ void CheckAndReconnectedToWiFiIfDisconnected() {
         WiFi.begin(WifiName, WifiPassword);
 
         while (WiFi.status() != WL_CONNECTED) {
-            delay(1000);
+            delay(5000);
         }
 
         Serial.println("Reconnected to Wi-Fi.");

@@ -3,7 +3,7 @@
 
 #include "MQTT.h"
 
-const char* mqtt_server = "192.168.0.100";
+const char* mqtt_server = "192.168.0.101";
 const int mqtt_server_port = 1883;
 const char* mqttUser = "";
 const char* mqttPassword = "";
@@ -83,11 +83,6 @@ void ConnectToMqttBroker() {
             Serial.print("Connection to MQTT broker failed. Retrying in 5 seconds...");
             delay(5000);
         }
-    }
-
-    if (!mqtt.connected()) {
-        Serial.println("Failed to connect to MQTT broker after multiple attempts.");
-        // Implement any necessary recovery logic or error handling here
     }
 }
 
