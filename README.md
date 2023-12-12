@@ -3,6 +3,7 @@
 ## Features
 - Motion detection
 - Air Quality Sensing
+- MQTT Support - For Home Assistant
 - OTA Updates - For easily remotely uploading firmware
 
 ## Hardware required
